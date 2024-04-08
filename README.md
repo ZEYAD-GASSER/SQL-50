@@ -1,2 +1,2 @@
 # SQL-50
-problem solving 
+problem solving by SQL programming 
