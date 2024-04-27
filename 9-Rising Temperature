@@ -1,0 +1,13 @@
+SELECT ze.id
+FROM  Weather na, Weather ze
+WHERE  DATEDIFF(ze.recordDate, na.recordDate) = 1 
+AND ze.temperature > na.temperature;
+
+/////////////////////////////////////////////
+DATEDIFF is a function used to calculate the difference between two dates in terms of a specified interval. 
+The function returns an integer representing the difference between end_date and start_date, measured in the specified interval.
+
+                          
+           DATEDIFF('day', start_date, end_date)
+
+////////////////////////////////////////////
