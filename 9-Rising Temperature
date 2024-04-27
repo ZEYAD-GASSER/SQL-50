@@ -1,7 +1,7 @@
-SELECT ze.id
-FROM  Weather na, Weather ze
-WHERE  DATEDIFF(ze.recordDate, na.recordDate) = 1 
-AND ze.temperature > na.temperature;
+SELECT b.id
+FROM Weather a INNER JOIN Weather b ON DATEDIFF(b.recordDate, a.recordDate) = 1 
+AND b.temperature > a.temperature;
+
 
 /////////////////////////////////////////////
 DATEDIFF is a function used to calculate the difference between two dates in terms of a specified interval. 
@@ -11,3 +11,6 @@ The function returns an integer representing the difference between end_date and
            DATEDIFF('day', start_date, end_date)
 
 ////////////////////////////////////////////
+
+
+
