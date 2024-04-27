@@ -1,0 +1,6 @@
+#This will retrieve distinct rows from the table based on all columns. Keep in mind that this doesn't actually remove duplicates from the table; it just returns a result set with distinct values
+
+select DISTINCT author_id as id 
+from Views 
+where author_id = viewer_id 
+order by id asc ;
