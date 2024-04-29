@@ -1,0 +1,6 @@
+select z1.name
+from Employee as z1
+inner join Employee as z2
+on z1.id=z2.managerId 
+GROUP BY z2.managerId 
+having count(z2.managerId) >=5
