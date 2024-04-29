@@ -1,0 +1,11 @@
+select z1.machine_id ,round(avg(z2.timestamp-z1.timestamp ),3) as processing_time
+from  Activity z1, Activity z2
+where
+z1.machine_id =z2.machine_id 
+and 
+z1.process_id  =z2.process_id 
+and
+z1.activity_type='start'
+and
+z2.activity_type='end'
+GROUP BY machine_id;
