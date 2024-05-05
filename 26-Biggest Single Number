@@ -1,0 +1,6 @@
+SELECT max(num) as num
+FROM 
+  (SELECT num, COUNT(num) AS cou
+   FROM MyNumbers
+   GROUP BY num) s
+WHERE cou = 1;
