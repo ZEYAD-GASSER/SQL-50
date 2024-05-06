@@ -1,0 +1,20 @@
+SELECT *
+FROM Users
+WHERE mail REGEXP '^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode[.]com$';
+
+
+
+***************************************************************************************************************************
+--Regular Expressions (Regex):
+--Regex is a powerful tool for pattern matching and manipulating strings.
+--In SQL, you can use regex functions and operators to perform advanced string operations. Some common regex-related functions and operators in SQL are:
+
+
+****************************************************************************************************************************
+--^ (caret) is a special character that asserts the start of the string. It ensures that the pattern starts matching from the beginning of the input.
+--The * (asterisk) quantifier means "zero or more occurrences" and is used to allow for flexibility in the characters that can follow the initial letter in the email username
+--[a-zA-Z] = means mail should start from small or capital letter.
+--[a-zA-Z0-9_.-] = after that any letter or number or _ or . or -
+---@leetcode = after that combine with  @leetcode
+--[.] = must come . after @leetcode
+--com = then com.
