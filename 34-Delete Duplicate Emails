@@ -1,0 +1,5 @@
+# CROSS JOIN
+delete z from 
+Person z,Person g
+where 
+z.Email = g.Email AND z.Id > g.Id
