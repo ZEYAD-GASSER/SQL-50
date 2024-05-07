@@ -21,3 +21,8 @@ but it can also be used to join rows from the same table (self-join). However,
 it's also possible to use an  -->>> older style of joining tables by listing multiple tables or aliases in the FROM clause,
 separated by commas. This older style is often referred to as "implicit join" or "comma join."
 In the query you provided, multiple aliases for the same table are listed in the FROM clause, separated by commas:
+/////////////////////////////////////////////////////////////////////////
+Creating multiple aliases for a table allows you to compare data within the same table,
+often for operations that involve self-joins.
+Each alias represents a different view or "instance" of the same table within the query.
+/*****************************************************************************/
