@@ -1,0 +1,8 @@
+select z.Name as Department, g. Name as Employee, g. Salary 
+from (
+select g.*, dense_rank() over (partition by DepartmentId order by Salary desc) as DeptPayRank 
+from Employee g 
+) g
+join Department z
+on g. DepartmentId = z. Id 
+where DeptPayRank <=3; 
