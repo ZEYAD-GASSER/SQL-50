@@ -4,3 +4,20 @@ where
 z.id=g.id-1 and g.id=n.id-1
 and 
 z.num=g.num and g.num=n.num;
+
+********************************************************************
+--Same solution
+SELECT DISTINCT
+    l1.Num AS ConsecutiveNums
+FROM Logs l1
+JOIN Logs l2 ON l1.Id = l2.Id - 1
+JOIN Logs l3 ON l2.Id = l3.Id - 1
+WHERE
+l1.Num = l2.Num
+AND l2.Num = l3.Num
+******************************************************************
+In SQL, the JOIN keyword is typically used to connect rows in different tables based on a related key,
+but it can also be used to join rows from the same table (self-join). However,
+it's also possible to use an  -->>> older style of joining tables by listing multiple tables or aliases in the FROM clause,
+separated by commas. This older style is often referred to as "implicit join" or "comma join."
+In the query you provided, multiple aliases for the same table are listed in the FROM clause, separated by commas:
