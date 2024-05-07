@@ -1,0 +1,8 @@
+select person_name 
+from 
+(SELECT turn, person_id, person_name, weight, (SELECT SUM(weight) FROM Queue WHERE turn <= t.turn) AS TotalWeight
+FROM Queue t
+GROUP BY turn
+ORDER BY turn)as zg
+where  TotalWeight<=1000 
+order by turn DESC limit 1;
