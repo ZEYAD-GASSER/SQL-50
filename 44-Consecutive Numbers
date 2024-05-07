@@ -1,0 +1,6 @@
+select distinct  z.num  as ConsecutiveNums 
+from Logs z,Logs g,Logs n
+where 
+z.id=g.id-1 and g.id=n.id-1
+and 
+z.num=g.num and g.num=n.num;
