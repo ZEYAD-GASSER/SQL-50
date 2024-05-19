@@ -1,8 +1,11 @@
-select z.Name as Department, g. Name as Employee, g. Salary 
-from (
-select g.*, dense_rank() over (partition by DepartmentId order by Salary desc) as DeptPayRank 
-from Employee g 
-) g
-join Department z
-on g. DepartmentId = z. Id 
-where DeptPayRank <=3; 
+select D.Department  ,D.Employee ,D.Salary 
+from 
+(
+
+
+select d.name  as Department ,e.name as Employee , e.Salary ,
+dense_rank() over(partition by  departmentId  order by Salary  desc) inn
+from Employee  e join Department d
+on e.departmentId =d.id
+)as D
+where D.inn in(1,2,3) ;
